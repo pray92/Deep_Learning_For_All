@@ -25,6 +25,7 @@ tf.model.add(tf.keras.layers.Dense(units=1, input_dim=2))
 tf.model.add(tf.keras.layers.Activation('sigmoid'))
 # Better result with loss function == 'binary_crossentropy'
 # Adding acurracy metric to get accuracy report during training
-tf.model.compile(loss='binary_crossentropy', optimizer=tf.keras.optimizers.SGD(lr=0.01), metrics=['accuracy'])
+# binary_crossentropy not recommended, use mse
+tf.model.compile(loss='mse', optimizer=tf.keras.optimizers.SGD(lr=0.01), metrics=['accuracy'])
 tf.model.summary()
 
